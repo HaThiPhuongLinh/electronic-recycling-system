@@ -14,4 +14,6 @@ public interface QuotingItemService {
 
     QuotingItem findById(String quotingItemId);
 
+    List<QuotingItem> findAll();
+
 }

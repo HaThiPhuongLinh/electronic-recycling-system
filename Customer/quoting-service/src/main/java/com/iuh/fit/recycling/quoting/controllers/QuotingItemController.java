@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/quote")
@@ -25,9 +27,14 @@ public class QuotingItemController {
         return ResponseEntity.ok(quotingItemService.add(request));
     }
 
-    @GetMapping("/{quotingItemId}")
+    @GetMapping("/item/{quotingItemId}")
     public ResponseEntity<QuotingItem> findById(@PathVariable String quotingItemId){
         return ResponseEntity.ok(quotingItemService.findById(quotingItemId));
+    }
+
+    @GetMapping("/items")
+    public ResponseEntity<List<QuotingItem>> findAll(){
+        return ResponseEntity.ok(quotingItemService.findAll());
     }
 
 }

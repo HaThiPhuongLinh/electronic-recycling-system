@@ -31,6 +31,7 @@ public class QuotingItem {
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
+    private int percentStatus;
     private double price;
     @JsonSerialize(using = CustomDateSerializer.class)
     private final LocalDateTime date = LocalDateTime.now();

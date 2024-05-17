@@ -22,6 +22,6 @@ public class ItemStatus {
     private QuotingItem quotingItem;
 
     private Status status;
-    private LocalDateTime dateTime;
+    private LocalDateTime time;
 
 }

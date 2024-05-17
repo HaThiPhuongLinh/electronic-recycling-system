@@ -8,4 +8,7 @@ import java.util.List;
 
 public interface ItemStatusRepository extends JpaRepository<ItemStatus, Long> {
     List<ItemStatus> findAllByQuotingItemQuotingItemId(String quotingItemId);
+
+    boolean existsByQuotingItemQuotingItemIdAndStatus(String quotingItemId, Status status);
+    boolean existsByQuotingItemQuotingItemId(String quotingItemId);
 }

@@ -2,6 +2,7 @@ package com.iuh.fit.recycling.itemstatus.services;
 
 import com.iuh.fit.recycling.itemstatus.entities.ItemState;
 import com.iuh.fit.recycling.itemstatus.entities.ItemStatus;
+import com.iuh.fit.recycling.itemstatus.entities.Status;
 import com.iuh.fit.recycling.itemstatus.models.responses.ItemStatusResponse;
 import com.iuh.fit.recycling.itemstatus.repositories.ItemStatusRepository;
 import com.iuh.fit.recycling.quoting.entities.QuotingItem;
@@ -17,6 +18,17 @@ import java.util.List;
 public class ItemStatusService implements IItemStatusService{
 
     private final ItemStatusRepository itemStatusRepository;
+
+    @Override
+    public boolean existsByQuotingItemIdAndStatus(String quotingItemId, Status status) {
+        return itemStatusRepository.existsByQuotingItemQuotingItemIdAndStatus(quotingItemId, status);
+
+    }
+
+    @Override
+    public boolean existsByQuotingItemId(String quotingItemId) {
+        return itemStatusRepository.existsByQuotingItemQuotingItemId(quotingItemId);
+    }
 
     @Override
     public ItemStatus add(ItemStatus itemStatus) {
@@ -36,7 +48,7 @@ public class ItemStatusService implements IItemStatusService{
         for (ItemStatus itemStatus : itemStatuses){
             states.add(ItemState.builder()
                     .status(itemStatus.getStatus())
-                    .time(itemStatus.getDateTime())
+                    .time(itemStatus.getTime())
                     .build());
         }
 

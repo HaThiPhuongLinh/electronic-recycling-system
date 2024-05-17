@@ -11,6 +11,7 @@ public class QuotingItemRequest {
     private String customerName;
     private String email;
     private String address;
+    private String bankName;
     private String accountNumber;
     private Long productId;
     private List<Long> conditionIds;

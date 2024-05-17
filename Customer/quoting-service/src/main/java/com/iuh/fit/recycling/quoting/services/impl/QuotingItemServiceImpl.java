@@ -46,11 +46,16 @@ public class QuotingItemServiceImpl implements QuotingItemService {
     }
 
     private double getPrice(Product product, Set<Condition> conditions){
+        int totalDecrease = getTotalDecrease(conditions);
+        return product.getPrice() * (100 - totalDecrease) / 100;
+    }
+
+    private int getTotalDecrease(Set<Condition> conditions){
         int totalDecrease = 0;
         for (Condition condition : conditions){
             totalDecrease += condition.getPercentDecrease();
         }
-        return product.getPrice() * (100 - totalDecrease) / 100;
+        return totalDecrease;
     }
 
     @Override
@@ -58,10 +63,12 @@ public class QuotingItemServiceImpl implements QuotingItemService {
         Product product = productService.findById(request.getProductId());
         Set<Condition> conditions = getConditionsByIds(request.getConditionIds());
         double price = getPrice(product, conditions);
+        int percentStatus = 100 - getTotalDecrease(conditions);
         return QuotingItem.builder()
                 .product(product)
                 .conditions(conditions)
                 .price(price)
+                .percentStatus(percentStatus)
                 .build();
     }
 
@@ -71,6 +78,7 @@ public class QuotingItemServiceImpl implements QuotingItemService {
                 .name(request.getCustomerName())
                 .email(request.getEmail())
                 .address(request.getAddress())
+                .bankName(request.getBankName())
                 .accountNumber(request.getAccountNumber())
                 .build();
 
@@ -80,7 +88,7 @@ public class QuotingItemServiceImpl implements QuotingItemService {
 
         Set<Condition> conditions = getConditionsByIds(request.getConditionIds());
         double price = getPrice(product, conditions);
-
+        int percentStatus = 100 - getTotalDecrease(conditions);
 
         QuotingItem quotingItem = quotingItemRepository.save(QuotingItem.builder()
                 .quotingItemId(UUID.randomUUID().toString())
@@ -89,10 +97,8 @@ public class QuotingItemServiceImpl implements QuotingItemService {
                 .customer(customer)
                 .inProcess(false)
                 .price(price)
+                .percentStatus(percentStatus)
                 .build());
-
-        ObjectMapper mapper = new ObjectMapper();
-        String newItemString = mapper.writeValueAsString(quotingItem);
 
         template.convertAndSend("recycling_initial", quotingItem.getQuotingItemId());
 
@@ -107,5 +113,10 @@ public class QuotingItemServiceImpl implements QuotingItemService {
             throw new BadRequestException("quotingItemId can not be null");
         return quotingItemRepository.findById(quotingItemId)
                 .orElseThrow(() -> new NotFoundException("quoting item not found"));
+    }
+
+    @Override
+    public List<QuotingItem> findAll() {
+        return quotingItemRepository.findAll();
     }
 }
