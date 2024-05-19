@@ -54,6 +54,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.iuh.fit.recycling.recieving</groupId>
+            <artifactId>receiving-assessment-service</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/receiving-assessment-service.jar</systemPath>
+        </dependency>
     </dependencies>
 
     <build>
