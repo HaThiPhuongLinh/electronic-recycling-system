@@ -1,13 +1,12 @@
 package com.iuh.fit.recycling.recycling.entities;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.iuh.fit.recycling.receiving.entities.FunctionalAssessmentReceivedItem;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
+
 
 @Entity
 @Getter

@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface ResellItemRepository extends JpaRepository<ResellItem, Long> {
     Optional<ResellItem> findByItemReceivedItemQuotingItemId(String quotingItemId);
+
 }

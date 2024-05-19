@@ -9,5 +9,4 @@ import java.util.Optional;
 @Repository
 public interface RecyclingItemRepository extends JpaRepository<RecyclingItem, Long> {
     Optional<RecyclingItem> findByItemReceivedItemQuotingItemId(String quotingItemId);
-
 }

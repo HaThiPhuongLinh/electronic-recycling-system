@@ -44,4 +44,5 @@ public class RecyclingAccountingServiceApplication implements CommandLineRunner 
         }
         return accessories;
     }
+
 }
