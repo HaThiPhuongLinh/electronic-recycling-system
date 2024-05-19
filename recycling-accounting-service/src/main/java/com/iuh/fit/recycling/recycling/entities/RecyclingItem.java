@@ -7,6 +7,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -21,9 +22,12 @@ public class RecyclingItem {
     @OneToOne
     @JoinColumn(name = "func_assessment_item_id", referencedColumnName = "id")
     private FunctionalAssessmentReceivedItem item;
-    @OneToMany
-    @JoinColumn(name = "recycling_item_id")
-    private List<Accessory> claimedAccessory;
+    @ManyToMany
+    @JoinTable(
+            name = "claimed_accessory",
+            joinColumns = @JoinColumn(name = "accessory_id"),
+            inverseJoinColumns = @JoinColumn(name = "recycling_item_id"))
+    private Set<Accessory> claimedAccessory;
     private LocalDateTime time;
     private String note;
 }
