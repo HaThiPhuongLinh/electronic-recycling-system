@@ -4,5 +4,6 @@ public enum ConditionType {
     OVERALL,
     SCREEN,
     BATTERY,
-    FUNCTIONAL
+    FUNCTIONAL,
+    SEALED
 }

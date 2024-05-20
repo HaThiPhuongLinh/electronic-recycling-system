@@ -138,6 +138,7 @@ public class ReceivedItemServiceImpl implements ReceivedItemService {
                 .id(receivedItem.getId())
                 .quotingItemId(request.getQuotingItemId())
                 .note(request.getNote())
+                .time(LocalDateTime.now())
                 .mediaProof(proof)
                 .status(request.getAccepted() ? ReceivedStatus.ACCEPTED : ReceivedStatus.DENIED)
                 .build();
@@ -154,7 +155,6 @@ public class ReceivedItemServiceImpl implements ReceivedItemService {
             functionalAssessmentReceivedItemRepository.save(functionalAssessmentReceivedItem);
 
         }
-
 
         ItemStatusDTO statusDTO = ItemStatusDTO.builder()
                 .quotingItemId(request.getQuotingItemId())

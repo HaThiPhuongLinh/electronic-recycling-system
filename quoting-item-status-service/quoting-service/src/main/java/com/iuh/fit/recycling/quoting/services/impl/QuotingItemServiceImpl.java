@@ -26,8 +26,10 @@ public class QuotingItemServiceImpl implements QuotingItemService {
     private final ProductService productService;
     private final ConditionService conditionService;
     private final QuotingItemRepository quotingItemRepository;
-
     private final JmsTemplate template;
+
+    private final int maxDecreasedValue = 98;
+    private final int minDecreasedValue = 10;
 
     private Set<Condition> getConditionsByIds(List<Long> conditionIds){
         Set<Condition> conditions = new HashSet<Condition>();
@@ -53,10 +55,25 @@ public class QuotingItemServiceImpl implements QuotingItemService {
     private int getTotalDecrease(Set<Condition> conditions){
         int totalDecrease = 0;
         for (Condition condition : conditions){
+            if (condition.getType().equals(ConditionType.SEALED))
+                return condition.getPercentDecrease();
             totalDecrease += condition.getPercentDecrease();
         }
-        return totalDecrease;
+        if (totalDecrease == 0){
+            return minDecreasedValue;
+        }
+
+        return Math.min(Math.max(totalDecrease, minDecreasedValue), maxDecreasedValue);
     }
+
+    private boolean isSealed(Set<Condition> conditions){
+        for (Condition condition : conditions){
+            if (condition.getType().equals(ConditionType.SEALED))
+                return true;
+        }
+        return false;
+    }
+
 
     @Override
     public QuotingItem getQuotingPrice(GetQuotingPriceRequest request) {

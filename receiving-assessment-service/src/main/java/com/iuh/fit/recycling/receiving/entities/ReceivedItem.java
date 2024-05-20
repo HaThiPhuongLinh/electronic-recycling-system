@@ -20,7 +20,7 @@ public class ReceivedItem {
     private String quotingItemId;
     private LocalDateTime time;
     @ElementCollection
-    @CollectionTable(name = "media_proof", joinColumns = @JoinColumn(name = "quoting_item_id")) // 2
+    @CollectionTable(name = "media_proof", joinColumns = @JoinColumn(name = "received_item_id"))
     private List<String> mediaProof;
     private ReceivedStatus status;
     private String note;

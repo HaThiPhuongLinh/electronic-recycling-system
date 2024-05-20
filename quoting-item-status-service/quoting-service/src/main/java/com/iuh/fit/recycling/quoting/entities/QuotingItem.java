@@ -25,8 +25,8 @@ public class QuotingItem {
     @ManyToMany
     @JoinTable(
             name = "item_condition",
-            joinColumns = @JoinColumn(name = "condition_id"),
-            inverseJoinColumns = @JoinColumn(name = "quotingitem_id"))
+            joinColumns = @JoinColumn(name = "quotingitem_id"),
+            inverseJoinColumns = @JoinColumn(name = "condition_id"))
     private Set<Condition> conditions;
     @ManyToOne
     @JoinColumn(name = "customer_id")

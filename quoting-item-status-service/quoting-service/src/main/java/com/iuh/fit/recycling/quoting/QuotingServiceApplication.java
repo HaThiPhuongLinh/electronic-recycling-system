@@ -41,30 +41,29 @@ public class QuotingServiceApplication implements CommandLineRunner {
         List<Double> productPrices = List.of(1056.00, 906.00, 754.00, 678.00, 535.00, 769.00, 703.00, 567.00, 579.00, 521.00, 389.00, 371.00, 398.00, 346.00, 263.00, 213.00, 307.00, 306.00, 233.00, 206.00, 173.00, 133.00, 136.00);
         List<String> productSeries = List.of("15", "15","15", "15","14", "14","14", "14","13", "13","13", "13","12", "12","12", "12","11", "11","11", "X","X", "X","X");
         List<String> imageUrls = List.of(
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715013889/new/iPhone/ip15max.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715014037/new/iPhone/ip15pro.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715957574/iPhone/ip15plus.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715014120/new/iPhone/ip15.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096765/new/iPhone/ip14.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096774/new/iPhone/ip14max.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096769/new/iPhone/ip14pro.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715957573/iPhone/ip14plus.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096761/new/iPhone/ip13max.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096757/new/iPhone/ip13pro.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096752/new/iPhone/ip13.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715957571/iPhone/ip13mini.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096748/new/iPhone/ip12max.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096744/new/iPhone/ip12pro.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715096741/new/iPhone/ip12.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715957570/iPhone/ip12mini.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715013814/new/iPhone/ip11max.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715013809/new/iPhone/ip11pro.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715013623/new/iPhone/ip11.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715957569/iPhone/ipXSmax.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715957567/iPhone/ipXS.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715957567/iPhone/ipXR.jpg?_s=public-apps",
-                "https://res.cloudinary.com/dwywbuukd/image/upload/fl_preserve_transparency/v1715013476/new/iPhone/ipX.jpg?_s=public-apps"
-        );
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715013889/new/iPhone/ip15max.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715014037/new/iPhone/ip15pro.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715957574/iPhone/ip15plus.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715014120/new/iPhone/ip15.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096765/new/iPhone/ip14.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096774/new/iPhone/ip14max.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096769/new/iPhone/ip14pro.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715957573/iPhone/ip14plus.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096761/new/iPhone/ip13max.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096757/new/iPhone/ip13pro.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096752/new/iPhone/ip13.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715957571/iPhone/ip13mini.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096748/new/iPhone/ip12max.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096744/new/iPhone/ip12pro.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715096741/new/iPhone/ip12.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715957570/iPhone/ip12mini.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715013814/new/iPhone/ip11max.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715013809/new/iPhone/ip11pro.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715013623/new/iPhone/ip11.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715957569/iPhone/ipXSmax.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715957567/iPhone/ipXS.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715957567/iPhone/ipXR.jpg",
+                "https://res.cloudinary.com/dwywbuukd/image/upload/v1715013476/new/iPhone/ipX.jpg");
 
         for (int index = 0; index < productNames.size(); index++){
             Product product = Product.builder()
@@ -125,7 +124,7 @@ public class QuotingServiceApplication implements CommandLineRunner {
 
         Condition dimCondition = Condition.builder()
                 .conditionId(6L)
-                .name(" Screen has flaws, flicker or is dim")
+                .name("Screen has flaws, flicker or is dim")
                 .percentDecrease(20)
                 .type(ConditionType.SCREEN)
                 .build();
@@ -141,7 +140,7 @@ public class QuotingServiceApplication implements CommandLineRunner {
 
         Condition chargeCondition = Condition.builder()
                 .conditionId(8L)
-                .name("Battery that can hold a charge")
+                .name("Battery can not hold a charge")
                 .percentDecrease(5)
                 .type(ConditionType.BATTERY)
                 .build();
@@ -173,8 +172,8 @@ public class QuotingServiceApplication implements CommandLineRunner {
 
         Condition buttonCondition = Condition.builder()
                 .conditionId(12L)
-                .name("All peripheral buttons")
-                .percentDecrease(55)
+                .name("Peripheral buttons not working")
+                .percentDecrease(5)
                 .type(ConditionType.FUNCTIONAL)
                 .build();
         initialCondition.add(buttonCondition);
@@ -205,11 +204,19 @@ public class QuotingServiceApplication implements CommandLineRunner {
 
         Condition netCondition = Condition.builder()
                 .conditionId(16L)
-                .name("Mobile network, Wi-Fi, Bluetooth, and GPS connectivity")
+                .name("Mobile network, Wi-Fi, Bluetooth, and GPS connectivity not working")
                 .percentDecrease(6)
                 .type(ConditionType.FUNCTIONAL)
                 .build();
         initialCondition.add(netCondition);
+
+        Condition newCondition = Condition.builder()
+                .conditionId(17L)
+                .name("Unopened retail packaging (factory sealed)")
+                .percentDecrease(10)
+                .type(ConditionType.SEALED)
+                .build();
+        initialCondition.add(newCondition);
         return initialCondition;
     }
 }
