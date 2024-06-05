@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import quotingAPI from "../../api/quotingAPI";
-import ProductAdminModal from "../model/ProductAdminModal";
+import ProductAdminModal from "../modal/ProductAdminModal";
 
 const ITEMS_PER_PAGE = 4;
 

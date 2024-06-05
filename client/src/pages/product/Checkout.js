@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import quotingAPI from '../../api/quotingAPI';
-import InvoiceModal from '../model/InvoiceModal';
+import InvoiceModal from '../modal/InvoiceModal';
 
 const Checkout = () => {
     const params = useParams();

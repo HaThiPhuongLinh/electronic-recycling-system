@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AssessmentModal from "../model/AssessmentModal";
+import AssessmentModal from "../modal/AssessmentModal";
 import { useEffect } from "react";
 import receivedAPI from "../../api/receivedAPI";
 import statusAPI from "../../api/statusAPI";

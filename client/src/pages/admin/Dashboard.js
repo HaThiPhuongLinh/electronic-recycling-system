@@ -10,9 +10,9 @@ import {
 } from "recharts";
 import accountingAPI from "../../api/accountingAPI";
 import quotingAPI from "../../api/quotingAPI";
-import ReportModal from "../model/ReportModal";
+import ReportModal from "../modal/ReportModal";
 import statusAPI from "../../api/statusAPI";
-import StatusModal from "../model/StatusModal";
+import StatusModal from "../modal/StatusModal";
 
 const Dashboard = () => {
   const [reportType, setReportType] = useState("revenue");

@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { PDFDownloadLink } from '@react-pdf/renderer';
-import OrderPDF from '../model/OrderPDF';
+import OrderPDF from '../modal/OrderPDF';
 
 const Shipment = () => {
     const location = useLocation();

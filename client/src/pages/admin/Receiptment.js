@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReceiptmentModal from "../model/ReceiptmentModal";
+import ReceiptmentModal from "../modal/ReceiptmentModal";
 import { useEffect } from "react";
 import receivedAPI from "../../api/receivedAPI";
 import statusAPI from "../../api/statusAPI";

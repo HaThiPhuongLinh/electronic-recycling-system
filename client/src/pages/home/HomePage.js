@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../../components/layout/Footer';
 import Carousel from './Carousel';
 import { useState } from "react";
-import StatusModal from '../model/StatusModal';
+import StatusModal from '../modal/StatusModal';
 import statusAPI from '../../api/statusAPI';
 
 const HomePage = () => {

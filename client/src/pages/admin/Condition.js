@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import quotingAPI from "../../api/quotingAPI";
-import ConditionModal from "../model/ConditionModal";
+import ConditionModal from "../modal/ConditionModal";
 
 const Condition = () => {
   const [conditions, setConditions] = useState([]);
